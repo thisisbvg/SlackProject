@@ -35,7 +35,7 @@ public class ActionControl {
         if (reaction.getEvent().getReaction().equals("+1::skin-tone-4")) {
             logger.info("inside");
 
-            URL urlObj = new URL("https://hooks.slack.com/services/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");
+            URL urlObj = new URL("https://hooks.slack.com/services/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");
             HttpURLConnection httpCon = (HttpURLConnection) urlObj.openConnection();
             httpCon.setRequestProperty("Content-Type", "application/json; charset=UTF-8");
             httpCon.setRequestProperty("Accept", "application/json");
