@@ -26,10 +26,4 @@ public class WeatherControl {
         WeatherHandler w = new WeatherHandler(city.substring(5));
         return w.getContent();
     }
-
-    @RequestMapping("/hello")
-    @ResponseBody
-    public String hello(HttpEntity<String> httpEntity) {
-        return "Hello World";
-    }
 }
