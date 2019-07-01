@@ -7,7 +7,9 @@ import com.slack.automation.slackautomation.model.WeatherModel;
 import org.apache.log4j.Logger;
 
 import java.io.BufferedReader;
+import java.io.IOException;
 import java.io.InputStreamReader;
+import java.net.ConnectException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -42,9 +44,14 @@ public class WeatherHandler {
             }
             logger.info("Response Code : " + response);
             in.close();
-            //more code goes here
+
+        }
+        catch(ConnectException connectException) {
+            connectException.printStackTrace();
+        } catch(IOException ioException) {
+            ioException.printStackTrace();
         } catch (Exception ex) {
-//do exception handling here
+            ex.printStackTrace();
         }
         Gson gson = new Gson();
         JsonParser parser = new JsonParser();
